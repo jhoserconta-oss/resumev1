@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RetroKits | Camisetas Retro</title>
+
+    <meta name="description"
+          content="Camisetas retro de clubes históricos del fútbol mundial.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+            <span>RETRO</span>KITS
+        </div>
+
+        <nav class="nav">
+            <a href="#inicio">Inicio</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <button class="cart-button" onclick="openCart()">
+            🛒 Carrito
+            <span id="cart-count">0</span>
+        </button>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section id="inicio" class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-small">
+                FÚTBOL • HISTORIA • PASIÓN
+            </p>
+
+            <h1>
+                Las camisetas que
+                <span>hicieron historia.</span>
+            </h1>
+
+            <p>
+                Descubre camisetas retro de los clubes más históricos
+                del fútbol mundial.
+            </p>
+
+            <a href="#catalogo" class="hero-button">
+                Ver colección
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CLUBES ================= -->
+
+    <section class="clubs">
+
+        <div class="section-title">
+
+            <p>COLECCIÓN</p>
+
+            <h2>
+                Clubes históricos
+            </h2>
+
+        </div>
+
+        <div class="club-list">
+
+            <button onclick="filterClub('Todos')">
+                Todos
+            </button>
+
+            <button onclick="filterClub('Boca Juniors')">
+                Boca
+            </button>
+
+            <button onclick="filterClub('River Plate')">
+                River
+            </button>
+
+            <button onclick="filterClub('Barcelona')">
+                Barcelona
+            </button>
+
+            <button onclick="filterClub('Real Madrid')">
+                Real Madrid
+            </button>
+
+            <button onclick="filterClub('Liverpool')">
+                Liverpool
+            </button>
+
+            <button onclick="filterClub('AC Milan')">
+                Milan
+            </button>
+
+            <button onclick="filterClub('Manchester United')">
+                Man United
+            </button>
+
+            <button onclick="filterClub('Chelsea')">
+                Chelsea
+            </button>
+
+            <button onclick="filterClub('Arsenal')">
+                Arsenal
+            </button>
+
+            <button onclick="filterClub('Corinthians')">
+                Corinthians
+            </button>
+
+            <button onclick="filterClub('Juventus')">
+                Juventus
+            </button>
+
+            <button onclick="filterClub('Ajax')">
+                Ajax
+            </button>
+
+            <button onclick="filterClub('Inter Milan')">
+                Inter
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CATÁLOGO ================= -->
+
+    <main id="catalogo" class="catalog">
+
+        <div class="catalog-header">
+
+            <div>
+                <p>COLECCIÓN RETRO</p>
+                <h2>Camisetas</h2>
+            </div>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="Buscar camiseta..."
+                    onkeyup="searchProducts()"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div id="products" class="products">
+
+            <!-- Los productos se generan mediante JavaScript -->
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= NOSOTROS ================= -->
+
+    <section id="nosotros" class="about">
+
+        <div class="about-text">
+
+            <p>RETROKITS</p>
+
+            <h2>
+                Fútbol que nunca
+                pasa de moda.
+            </h2>
+
+            <p>
+                Nuestra colección está inspirada en algunas de las
+                camisetas más recordadas de la historia del fútbol.
+                Diseños que representan épocas, jugadores y momentos
+                que quedaron para siempre en la memoria de los hinchas.
+            </p>
+
+        </div>
+
+        <div class="about-number">
+
+            <strong>13</strong>
+
+            <span>
+                clubes históricos
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACTO ================= -->
+
+    <section id="contacto" class="contact">
+
+        <p>¿TIENES ALGUNA DUDA?</p>
+
+        <h2>
+            Hablemos.
+        </h2>
+
+        <p>
+            Escríbenos para consultar disponibilidad,
+            tallas y pedidos.
+        </p>
+
+        <a
+            href="https://wa.me/51999999999"
+            class="whatsapp"
+            target="_blank"
+        >
+            WhatsApp
+        </a>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            RETROKITS
+        </div>
+
+        <p>
+            © 2026 RetroKits. Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= CARRITO ================= -->
+
+    <div id="cart-modal" class="cart-modal">
+
+        <div class="cart-content">
+
+            <button class="close-cart" onclick="closeCart()">
+                ×
+            </button>
+
+            <h2>
+                Tu carrito
+            </h2>
+
+            <div id="cart-items"></div>
+
+            <div class="cart-total">
+
+                <span>Total:</span>
+
+                <strong id="cart-total">
+                    S/ 0.00
+                </strong>
+
+            </div>
+
+            <button
+                class="checkout"
+                onclick="checkout()"
+            >
+                Comprar por WhatsApp
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
